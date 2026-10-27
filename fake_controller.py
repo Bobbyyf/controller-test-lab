@@ -13,6 +13,9 @@ class FakeController:
         return button in self.pressed
 
     def drain(self, amount):
+        if(amount < 0):
+            raise ValueError("Battery cannot be over 100")
+        
         result = self.battery - amount
         self.battery = result
 
