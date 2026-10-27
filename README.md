@@ -1,15 +1,14 @@
 # controller-test-lab
 
-![Tests]
 
 This repo basically serves as my automation sandbox, any kind of automation practice goes here.
 
-Why automation? Because breaking things is fun :)
+Why automation? Because breaking things is fun :).
 
 ## What's being tested at the moment
-A fake controller that I want to eventually turn into a mixture of code and physical hardware with an arduino for actul inputs
+A fake controller that I want to eventually turn into a mixture of code and physical hardware with an arduino for actual inputs.
 
-Right now the controller test for battery and inputs, valid and invalid
+Right now the controller test for battery and inputs, valid and invalid.
 
 ## Running the tests
 
