@@ -19,7 +19,6 @@ def test_press_then_release(new_fake_controller):
     assert result is False
 
 @pytest.mark.parametrize("amount, expected", [(30,70), (15,85), (92, 8), (150, 0), (100, 0), (0, 100)])
-
 def test_drain(new_fake_controller, amount, expected):
     new_fake_controller.drain(amount)
     assert new_fake_controller.battery == expected
@@ -27,3 +26,9 @@ def test_drain(new_fake_controller, amount, expected):
 def test_drain_negative_val(new_fake_controller):
     with pytest.raises(ValueError, match = "Battery cannot be over 100"):
         new_fake_controller.drain(-10)
+
+def test_rejected_drain_leaves_battery_unchanged(new_fake_controller):
+    new_fake_controller.drain(30)
+    with pytest.raises(ValueError):
+        new_fake_controller.drain(-5)
+    assert new_fake_controller.battery == 70
